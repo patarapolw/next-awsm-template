@@ -1,0 +1,25 @@
+.Header {
+  margin-bottom: 4rem;
+}
+
+.Nav ul {
+  display: inline-block;
+}
+
+.Form {
+  float: right;
+  max-width: 300px;
+  position: relative;
+}
+
+.Form input {
+  padding-right: 1.5em;
+}
+
+.Form .icon {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 1em;
+  height: 1em;
+}

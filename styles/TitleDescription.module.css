@@ -1,0 +1,10 @@
+.Small {
+  display: block;
+  min-height: 4em;
+}
+
+.Small .date {
+  float: right;
+  min-width: 15em;
+  text-align: right;
+}
