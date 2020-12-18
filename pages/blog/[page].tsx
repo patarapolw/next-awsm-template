@@ -29,7 +29,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     paths: Array(
       Math.ceil(
         dbPost.find({
-          date: { $exists: true } as any
+          date: { $lt: new Date().getTime() }
         }).length / 5
       ) - 1
     )

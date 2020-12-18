@@ -35,7 +35,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   await initDatabase()
   const tMap = new Map<string, number>()
 
-  dbPost.find().map(({ tag = [] }) => {
+  dbPost.find({
+    date: { $lt: new Date().getTime() }
+  }).map(({ tag = [] }) => {
     return tag.map((t) => {
       return tMap.set(t, (tMap.get(t) || 0) + 1)
     })
