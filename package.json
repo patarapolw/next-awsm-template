@@ -1,5 +1,5 @@
 {
-  "name": "@zhdiary/next",
+  "name": "@patarapolw/next-awsm",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -45,7 +45,6 @@
     "fs-extra": "^9.0.1",
     "import-sort-parser-typescript": "^6.0.0",
     "next-svgr": "^0.0.2",
-    "nodejieba": "^2.5.1",
     "prettier": "^2.2.1",
     "rimraf": "^3.0.2",
     "showdown": "^1.9.1",

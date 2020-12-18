@@ -1,15 +1,14 @@
-import { IPost, db, dbPost, initDatabase, zMatter, zPost } from '../server/db'
-import { buildPath, dstMediaPath } from '../server/dir'
-
-import { MakeHtml } from './make-html'
-import { THEME_FILENAME } from '../server/theme'
 import fg from 'fast-glob'
 import fs from 'fs-extra'
-import jieba from 'nodejieba'
+import yaml from 'js-yaml'
 import lunr from 'lunr'
 import rimraf from 'rimraf'
+
+import { IPost, db, dbPost, initDatabase, zMatter, zPost } from '../server/db'
+import { buildPath, dstMediaPath } from '../server/dir'
+import { THEME_FILENAME } from '../server/theme'
 import { srcPath } from './dir'
-import yaml from 'js-yaml'
+import { MakeHtml } from './make-html'
 
 async function main () {
   rimraf.sync(dstMediaPath())
@@ -59,10 +58,7 @@ async function main () {
       }
 
       dbPost.insert(zPost.parse(p))
-      rawJson.push({
-        ...p,
-        content: jieba.cutForSearch(p.content).join(' ')
-      })
+      rawJson.push(p)
     })
   )
 
